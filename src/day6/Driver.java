@@ -97,5 +97,5 @@ public class Driver {
 			total += inc.get(i);
 		} // end for
 		return total;
-	} // end doArraySum
+	} // end doArrayListSum
 } // end Driver
