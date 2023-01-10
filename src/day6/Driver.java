@@ -73,7 +73,7 @@ public class Driver {
 		// but it would work for reference types!
 //		System.out.println("The sum value of the elements within the array is: " + doArrayListSum(Arrays.asList(array)));
 
-		// this works for primitives types 
+		// this works for some primitives types (notably not char[]!) 
 		System.out.println("The sum value of the elements within the array is: " + doArrayListSum(Arrays.stream(array).boxed().toList()));
 		
 		// for reference types, just remove the .boxed() portion!
