@@ -55,16 +55,40 @@ public class Driver {
 		String possiblePalindrome = "racecar";
 		System.out.println("The word " + possiblePalindrome + (isPalindrome(possiblePalindrome)? " is":" is not") + " a palindrome.");
 		
+		// Thought experiment, how to verify password complexity (e.g. must contain an upper-case letter, a lower-case letter, a number, a character, etc.)...
+		String password = "123456";
+		System.out.println("The password " + password + (isComplex(password)? " is":" is not") + " complex.");
+		password = "password";
+		System.out.println("The password " + password + (isComplex(password)? " is":" is not") + " complex.");
+		password = "Password1!";
+		System.out.println("The password " + password + (isComplex(password)? " is":" is not") + " complex.");
 	} // end main
 	
 	private static boolean isPalindrome(String inc) {
-		char[] normal = inc.toCharArray();
+		char[] letters = inc.toCharArray();
 		boolean palindrome = true;
-		for (int i=0;i<normal.length;i++) {
-			if (normal[i] != normal[normal.length-1-i]) { // what is the semantic meaning of this code?
+		for (int i=0;i<letters.length;i++) {
+			if (letters[i] != letters[letters.length-1-i]) { // what is the semantic meaning of this code?
 				palindrome = false;
 			} // end if
 		} // end for
 		return palindrome;
 	} // end isPalindrome
+	
+	private static boolean isComplex(String inc) {
+		boolean complex = true;
+		if (!inc.matches(".*[ABCDEFGHIJKLMNOPQRSTUVWXYZ].*")) { // uses REGEX patterns -- regular expressions
+			complex = false;
+		} // end for
+		if (!inc.matches(".*[abcdefghijklmnopqrstuvwxyz].*")) {
+			complex = false;
+		} // end for
+		if (!inc.matches(".*[0123456789].*")) {
+			complex = false;
+		} // end for
+		if (!inc.matches(".*[!@#$%].*")) {
+			complex = false;
+		} // end for
+		return complex;
+	} // end isComplex
 } // end Driver
