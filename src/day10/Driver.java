@@ -14,6 +14,7 @@ public class Driver {
 		// This is yet another way to detect palindromes
 		System.out.println("The word " + possiblePalindrome + (isRecursivePaldinrome(possiblePalindrome)? " is":" is not") + " a palindrome.");
 		
+		// Which way is the "best"?
 	} // end main
 	
 	private static boolean isPalindrome(String inc) {
@@ -29,7 +30,7 @@ public class Driver {
 	
 	private static boolean isDoubleListPalindrome(String inc) {
 		// there isn't a good way to convert a char[] to a List<Character> built into java
-		// the stream method we used a few days ago for intergers doesn't work for character!
+		// the stream method we used a few days ago for int[] doesn't work for char[]!
 		List<Character> letters = new ArrayList<Character>();
 		for (char eachOne: inc.toCharArray()) {
 			letters.add(eachOne);
@@ -48,10 +49,14 @@ public class Driver {
 	} // end isDoubleListPalindrome
 	
 	private static boolean isRecursivePaldinrome(String inc) {
-		if (inc.length() == 0 || inc.length() == 1)
-			return true; // we're at the end
-		if (inc.charAt(0) == inc.charAt(inc.length() - 1))
-			return isRecursivePaldinrome(inc.substring(1, inc.length() - 1));
-		return false; // this is required because of "definite assignment"
+		if (inc.length() <= 1) {
+			return true; // we're at the end and everything prior matched			
+		} else {
+			if (inc.charAt(0) == inc.charAt(inc.length() - 1)) {
+				return isRecursivePaldinrome(inc.substring(1, inc.length() - 1));				
+			} else {
+				return false;
+			} // end else
+		} // end else
 	} // end isRecursivePaldinrome
 } // end Driver
