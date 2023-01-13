@@ -1,5 +1,6 @@
 package day11;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
@@ -7,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
+import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
 public class JFrameDriver {
@@ -47,6 +49,7 @@ public class JFrameDriver {
 		contents.setLayout(null);
 		contents.setLocation(15, 15);
 		contents.setSize(contents.getPreferredSize()); // Why do this instead of just passing 150, 150 like we did in the ctor?
+		contents.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED, Color.red, Color.blue));
 		panel.add(contents); // What does this do?
 		
 		frame.setContentPane(panel); // What does this do?
