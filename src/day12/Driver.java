@@ -65,7 +65,7 @@ public class Driver {
 	
 	private void initComponents() {
 		frame = new JFrame();
-		frame.setTitle("Demonstration Graphical User Interface");
+		frame.setTitle("Day 12 Demonstration");
 		frame.setLayout(null);
 		frame.setSize(new Dimension(425, 300));
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
