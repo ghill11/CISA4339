@@ -46,6 +46,9 @@ public class Driver {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		} // end catch
+		
+		// how can we create a data entry loop with verification that allows an arbitrary number of values until the user signals they are done?
+		
 	} // end main
 	
 	private static int verifiedGrade(int inc) throws RangeCheck {
