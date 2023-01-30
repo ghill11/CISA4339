@@ -46,6 +46,19 @@ public class Driver {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		} // end catch
+		
+		// how can we create a data entry loop with verification that allows an arbitrary number of values until the user signals they are done?
+		
+		do {
+			try {
+				System.out.println("Enter a grade value (type Z to exit): ");
+				String grade = in.nextLine();
+				if (grade.equalsIgnoreCase("z")) {break;};
+				System.out.println("The grade that you entered was: " + verifiedGrade(Integer.valueOf(grade)));
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			} // end catch
+		} while (true); // how is this not an infinite loop?
 	} // end main
 	
 	private static int verifiedGrade(int inc) throws RangeCheck {
