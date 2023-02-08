@@ -12,6 +12,8 @@ import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 
 public class Driver {
 	private List<Student> courseRoster;
@@ -37,7 +39,13 @@ public class Driver {
 	private List<Student> initData(){
 		List<Student> roster = new ArrayList<Student>();
 		roster.add(new Student("Grace","Hopper",4.0));
+		roster.add(new Student("Katherine","Johnson",3.98));
 		roster.add(new Student("Steve","Jobs",1.2));
+		roster.add(new Student("Ada","Countess of Lovelace",3.67));
+		roster.add(new Student("Marvin","the Martian",3.9));
+		roster.add(new Student("Gossamer","the Monster",2.83));
+		roster.add(new Student("Fred","Flintstone",1.67));
+		roster.add(new Student("George","Jetson",2.58));
 		return roster;
 	} // end initData
 	
@@ -55,6 +63,28 @@ public class Driver {
 		panel.setBorder(BorderFactory.createTitledBorder(
 				   BorderFactory.createEtchedBorder(), "Student Information", 
 				   TitledBorder.LEFT, TitledBorder.TOP));
+		
+		
+		Object[] columnNames = new Object[] {"First Name","Last Name", "GPA"};
+		DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0); // 0 indicates no rows at this time
+		for (Student eachOne: courseRoster) {
+			tableModel.addRow(new Object[] {eachOne.getfName(),eachOne.getlName(),eachOne.getGpa()});
+		} // end for
+		table = new JTable(tableModel);
+		table.setAutoResizeMode( JTable.AUTO_RESIZE_OFF ); // allows us to manage the column width without Java overriding our settings!
+
+		TableColumnModel columnModel = table.getColumnModel();
+		columnModel.getColumn(0).setWidth(150);
+		columnModel.getColumn(0).setPreferredWidth(100);
+		columnModel.getColumn(1).setWidth(125);
+		columnModel.getColumn(1).setPreferredWidth(125);
+		columnModel.getColumn(2).setWidth(150);
+		columnModel.getColumn(2).setPreferredWidth(150);
+		
+		scroll = new JScrollPane(table);
+		scroll.setSize(new Dimension(300,125));
+		scroll.setLocation(10,25);
+		panel.add(scroll);
 		
 		frame.setContentPane(panel);
 		frame.setVisible(true);
