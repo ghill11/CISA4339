@@ -38,7 +38,7 @@ public class Driver {
 		
 		int pageSize = 3;
 		int pages = array.length / pageSize;
-		pages += array.length % pageSize > 0 ? 1 : 0; // what is the semantic meaning of this?
+		pages += array.length % pageSize > 0 ? 1 : 0; // what is the semantic meaning of this conditional (aka ternary) operator?
 		// why would we even want to add 1 or not in this situation?
 		for (int i=0;i<pages;i++) { // why use pages here?
 			for (int j=0;j<pageSize;j++) { // why use pageSize here?
