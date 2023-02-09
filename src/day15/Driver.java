@@ -1,10 +1,14 @@
 package day15;
 
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -16,11 +20,20 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 public class Driver {
+	
+	private class AddButtonHandler implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			
+		} // end actionPerformed
+	} // end AddButtonHandler
+	
 	private List<Student> courseRoster;
 	private JFrame frame;
 	private JPanel panel;
 	private JTable table;
 	private JScrollPane scroll;
+	private JButton add;
 	
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
@@ -74,7 +87,7 @@ public class Driver {
 		table.setAutoResizeMode( JTable.AUTO_RESIZE_OFF ); // allows us to manage the column width without Java overriding our settings!
 
 		TableColumnModel columnModel = table.getColumnModel();
-		columnModel.getColumn(0).setWidth(150);
+		columnModel.getColumn(0).setWidth(100);
 		columnModel.getColumn(0).setPreferredWidth(100);
 		columnModel.getColumn(1).setWidth(125);
 		columnModel.getColumn(1).setPreferredWidth(125);
@@ -82,9 +95,16 @@ public class Driver {
 		columnModel.getColumn(2).setPreferredWidth(150);
 		
 		scroll = new JScrollPane(table);
-		scroll.setSize(new Dimension(300,125));
+		scroll.setSize(new Dimension(375,125));
 		scroll.setLocation(10,25);
 		panel.add(scroll);
+		
+		add = new JButton("Add New Record");
+		add.setFont(new Font("Arial",Font.BOLD,18));
+		add.setLocation(10,175);
+		add.setSize(200,40);
+		add.addActionListener(new AddButtonHandler());
+		panel.add(add);
 		
 		frame.setContentPane(panel);
 		frame.setVisible(true);
