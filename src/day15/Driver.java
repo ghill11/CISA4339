@@ -24,7 +24,7 @@ public class Driver {
 	private class AddButtonHandler implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent ae) {
-			
+			new StudentDataEditor();
 		} // end actionPerformed
 	} // end AddButtonHandler
 	
