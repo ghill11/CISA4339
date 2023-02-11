@@ -22,4 +22,16 @@ public class Student {
 	public double getGpa() {
 		return gpa;
 	} // end getGpa
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	} // end setfName
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	} // end setlName
+
+	public void setGpa(double gpa) {
+		this.gpa = gpa;
+	} // end setGpa
 } // end Student
