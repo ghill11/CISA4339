@@ -8,12 +8,21 @@ public class Driver {
 	public static void main(String[] args) {
 		// This is what we did last class
 		String possiblePalindrome = "racecar";
+		long startTime = System.currentTimeMillis();
 		System.out.println("The word " + possiblePalindrome + (isPalindrome(possiblePalindrome)? " is":" is not") + " a palindrome.");
+		long endTime = System.currentTimeMillis();
+		System.out.println("Execution time in milliseconds: " + (endTime-startTime));
 		// This is another way to detect palindromes
+		startTime = System.currentTimeMillis();
 		System.out.println("The word " + possiblePalindrome + (isDoubleListPalindrome(possiblePalindrome)? " is":" is not") + " a palindrome.");
+		endTime = System.currentTimeMillis();
+		System.out.println("Execution time in milliseconds: " + (endTime-startTime));
 		// This is yet another way to detect palindromes
+		startTime = System.currentTimeMillis();
 		System.out.println("The word " + possiblePalindrome + (isRecursivePaldinrome(possiblePalindrome)? " is":" is not") + " a palindrome.");
-		
+		endTime = System.currentTimeMillis();
+		System.out.println("Execution time in milliseconds: " + (endTime-startTime));
+
 		// Which way is the "best"?
 	} // end main
 	
