@@ -15,7 +15,10 @@ public class MyDrawing extends JPanel {
 		this.height = height;
 		this.width = width;
 	} // end ctor
-	
+
+	/**
+	 * https://stackoverflow.com/questions/9389187/difference-between-paint-paintcomponent-and-paintcomponents-in-swing
+	 */
     @Override
     protected void paintComponent(Graphics g) { // What is going on in here?
         super.paintComponent(g);
