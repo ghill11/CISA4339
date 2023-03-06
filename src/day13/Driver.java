@@ -34,7 +34,7 @@ public class Driver {
 			demoStudent.dropCourse(txtCourse.getText());
 			updateSchedule();			
 		} // end actionPerformed
-	} // end RegistrationHandler
+	} // end DropButtonHandler
 	
 	private JFrame frame;
 	private JPanel panel;
@@ -148,7 +148,7 @@ public class Driver {
 		btnDropCourse.addActionListener(new DropButtonHandler());
 		panel.add(btnDropCourse);
 		
-		graduating = new JCheckBox("Graduating this semester?");
+		graduating = new JCheckBox("Graduating this semester?"); // can pass a 2nd argument [boolean] to indicate checked by default 
 		graduating.setLocation(250,20);
 		graduating.setSize(185,20);
 		panel.add(graduating);
