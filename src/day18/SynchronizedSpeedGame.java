@@ -1,4 +1,4 @@
-package day17;
+package day18;
 
 public class SynchronizedSpeedGame implements Runnable {			
 		private final String word;

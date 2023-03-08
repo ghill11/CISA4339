@@ -1,4 +1,4 @@
-package day17;
+package day18;
 
 public class Ball {
 	private String value = "";
