@@ -35,6 +35,7 @@ public class Driver {
 		
 		System.out.println("****************************** Priority Queue ******************************");
 		PriorityQueue pq = new PriorityQueue(1); // can change to use other underlying concrete data structures
+		// the number at the end indicates "rank" which is used to prioritize and order the elements
 		pq.offer(new Faculty("Jeff","Hill",2));
 		pq.offer(new Faculty("Brigid","Appiah Otoo",3));
 		pq.offer(new Faculty("Mike","Casey",3));
