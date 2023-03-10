@@ -199,6 +199,12 @@ public class Driver {
 		 * https://www.javatpoint.com/sorting-algorithms
 		 * 
 		 * Big O Notation - https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity
+		 * Used to indicate the worst-case scenario for comparative purposes between algorithms. However, that isn't
+		 * the whole story, average execution time is also useful information!
+		 * Singly linked list traversal --> O(n)
+		 * Singly linked list traversal average --> O(n/2)
+		 * Doubly linked list traversal --> O(n/2)
+		 * Doubly linked list traversal average --> O(n/4)
 		 */
 
 		// create an unsorted array
