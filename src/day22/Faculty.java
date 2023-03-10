@@ -17,6 +17,6 @@ public class Faculty implements Comparable<Faculty> {
 
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + ", rank=" + rank;
+		return firstName + " " + lastName + "(" + rank + ")";
 	} // end toString
 } // end Faculty

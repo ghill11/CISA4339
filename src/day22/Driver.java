@@ -35,16 +35,15 @@ public class Driver {
 		
 		System.out.println("****************************** Priority Queue ******************************");
 		PriorityQueue pq = new PriorityQueue(1); // can change to use other underlying concrete data structures
-		pq.offer(new Faculty("Jeff","Hill",3));
-		pq.offer(new Faculty("Brigid","Appiah Otoo",4));
-		pq.offer(new Faculty("Mike","Casey",4));
-		pq.offer(new Faculty("Tom","Snyder",3));
-		pq.offer(new Faculty("Laci","Lyons",2));
-		pq.offer(new Faculty("Steven","Zeltmann",4));
-		pq.offer(new Faculty("Joe","Thomas",4));
+		pq.offer(new Faculty("Jeff","Hill",2));
+		pq.offer(new Faculty("Brigid","Appiah Otoo",3));
+		pq.offer(new Faculty("Mike","Casey",3));
+		pq.offer(new Faculty("Tom","Snyder",2));
+		pq.offer(new Faculty("Steven","Zeltmann",3));
+		pq.offer(new Faculty("Joe","Thomas",3));
 		pq.offer(new Faculty("Michael","Hargis",1));
-		pq.offer(new Faculty("Mike","Ellis",4));
-		pq.offer(new Faculty("Stephanie","Watson",3));
+		pq.offer(new Faculty("Mike","Ellis",3));
+		pq.offer(new Faculty("Stephanie","Watson",2));
 		sb = new StringBuilder();
 		while (!pq.isEmpty()){
 			sb.append(pq.poll()).append(",");
