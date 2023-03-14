@@ -31,6 +31,7 @@ public class Driver {
 		for (Book eachOne: library) {
 			System.out.println(toXML(eachOne));
 		} // end for		
+		// Validate output formatting using XML validator: https://codebeautify.org/xmlvalidator
 	} // end main
 	
 	private static <E> String toJSON(E inc) {
