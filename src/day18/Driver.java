@@ -19,9 +19,9 @@ public class Driver {
 			System.out.println();
 
 			System.out.println("******** COORDINATED, THREADED, AND SYNCHRONIZED ******** (will always work as intended)");
-			Ball ball2 = new Ball("ping");
-			ping = new Thread(new CoordinatedSynchronizedSpeedGame("ping", ball2));
-			pong = new Thread(new CoordinatedSynchronizedSpeedGame("pong", ball2));
+			Ball ball2 = new Ball(1);
+			ping = new Thread(new CoordinatedSynchronizedSpeedGame("ping", 1, ball2));
+			pong = new Thread(new CoordinatedSynchronizedSpeedGame("pong", 2, ball2));
 			ping.start();
 			pong.start();
 			ping.join();
