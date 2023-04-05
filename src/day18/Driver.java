@@ -28,7 +28,7 @@ public class Driver {
 //			pong.join();
 //			System.out.println();
 			
-			ThreadPoolExecutor tp = new ThreadPoolExecutor(5, 10, 60, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(5));
+			ThreadPoolExecutor tp = new ThreadPoolExecutor(5, 5, 60, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(5));
 			tp.allowCoreThreadTimeOut(true);
 			for (char i='A';i<='Z';i++) {
 				while (true) {
