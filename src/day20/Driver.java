@@ -2,6 +2,8 @@ package day20;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -214,10 +216,33 @@ public class Driver {
 			unsortedArray[i] = rng.nextInt(0, 100_000);
 		} // end for
 		
-		System.out.println("*************** INSERTION SORT ***************");
-		// https://www.javatpoint.com/insertion-sort-in-java
+		System.out.println("*************** JAVA's DUAL-PIVOT QUICKSORT ***************");
 		int[] cloneArray = unsortedArray.clone();
 		StringBuilder sb = new StringBuilder();
+		for (int i=0;i<arrSize/100;i++) { // get the first 1% for demonstration purposes
+			sb.append(cloneArray[i]).append(",");
+		} // end for
+		System.out.println(sb.toString().substring(0,sb.toString().length()-1));
+		startTime = System.currentTimeMillis();
+		// need to make it a List<> for the built-in sorter
+		List<Integer> unsortedList = new ArrayList<Integer>();
+		for (int eachOne: cloneArray) {
+			unsortedList.add(eachOne);
+		} // end for
+		Collections.sort(unsortedList);
+		
+		endTime = System.currentTimeMillis();
+		System.out.println("Execution time in milliseconds: " + (endTime - startTime));
+		sb = new StringBuilder();
+		for (int i=0;i<arrSize/100;i++) { // get the first 1% for demonstration purposes
+			sb.append(unsortedList.get(i)).append(",");
+		} // end for
+		System.out.println(sb.toString().substring(0,sb.toString().length()-1));
+		
+		System.out.println("*************** INSERTION SORT ***************");
+		// https://www.javatpoint.com/insertion-sort-in-java
+		cloneArray = unsortedArray.clone();
+		sb = new StringBuilder();
 		for (int i=0;i<arrSize/100;i++) { // get the first 1% for demonstration purposes
 			sb.append(cloneArray[i]).append(",");
 		} // end for
