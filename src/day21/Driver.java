@@ -86,7 +86,6 @@ public class Driver {
 		} // end for
 		System.out.println(sb.toString().substring(0,sb.toString().length()-1));
 		
-		// But because it doesn't sort during insertion, it is quicker to populate!
 		System.out.println("*************** Populate HashMap ***************");
 		Map<Integer,Integer> map2 = new HashMap<Integer,Integer>();
 		long startTime = System.currentTimeMillis();
@@ -110,6 +109,30 @@ public class Driver {
 		startTime = System.currentTimeMillis();
 		for (int i = 0; i < dataSize; i++) {
 			map2.put(i, rng.nextInt(0, 10_000));
+		} // end for
+		endTime = System.currentTimeMillis();
+		System.out.println("Execution time in milliseconds: " + (endTime - startTime));
+		
+		System.out.println("*************** Traverse HashMap Random 10% of elements ***************");
+		Map<Integer,Integer> map3 = new HashMap<Integer,Integer>();
+		for (int i = 0; i < dataSize; i++) {
+			map3.put(i, rng.nextInt(0, 10_000));
+		} // end for
+		startTime = System.currentTimeMillis();
+		for (int i = 0; i < dataSize / 10; i++) {
+			int temp = map3.get(rng.nextInt(0, dataSize));
+		} // end for
+		endTime = System.currentTimeMillis();
+		System.out.println("Execution time in milliseconds: " + (endTime - startTime));
+		
+		System.out.println("*************** Traverse TreeMap Random 10% of elements ***************");
+		Map<Integer,Integer> map4 = new LinkedHashMap<Integer,Integer>();
+		for (int i = 0; i < dataSize; i++) {
+			map4.put(i, rng.nextInt(0, 10_000));
+		} // end for
+		startTime = System.currentTimeMillis();
+		for (int i = 0; i < dataSize / 10; i++) {
+			int temp = map4.get(rng.nextInt(0, dataSize));
 		} // end for
 		endTime = System.currentTimeMillis();
 		System.out.println("Execution time in milliseconds: " + (endTime - startTime));
