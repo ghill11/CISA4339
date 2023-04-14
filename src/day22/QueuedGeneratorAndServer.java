@@ -53,7 +53,7 @@ public class QueuedGeneratorAndServer {
 	} // end Server
 	
 	public static void main(String[] args) {
-		Queue queue = new Queue(1);
+		Queue queue = new Queue(3); // using Vector for thread safety
 		Thread generator = new Thread(new QueuedGeneratorAndServer().new Generator(queue));
 		Thread server = new Thread(new QueuedGeneratorAndServer().new Server(queue));
 		generator.start();
