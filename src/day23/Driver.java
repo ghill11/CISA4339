@@ -2,6 +2,7 @@ package day23;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Driver {
@@ -10,11 +11,11 @@ public class Driver {
 		// these do need to be reference types, not primitives
 		ArrayList<String> words = new ArrayList<String>(Arrays.asList("UCA","UALR","UAPB","UACCM"));
 		System.out.println(simplePrintIt(words)); // this works just fine
-		System.out.println(printIt(words));
 		ArrayList<Integer> integers = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5));
 //		System.out.println(simplePrintIt(integers)); // this does not work! 
 		// How do we fix this problem without creating many method overloads with inherent code duplication?
 
+		System.out.println(printIt(words));
 		System.out.println(printIt(integers));
 		ArrayList<Double> doubles = new ArrayList<Double>(Arrays.asList(6.1,7.2,8.3,9.4,10.5));
 		System.out.println(printIt(doubles));
@@ -93,14 +94,6 @@ public class Driver {
 	} // end printIt
 	
 	private static <E extends Comparable<E>> String getLargest(List<E> inc) {
-		StringBuilder sb = new StringBuilder();
-		E max = inc.get(0);
-		for (E eachOne: inc) {
-			if (eachOne.compareTo(max) > 0) {
-				max = eachOne;
-			} // end if
-		} // end for
-		sb.append(max + " is the largest!");
-		return sb.toString();
+		return Collections.max(inc) + " is the largest!";
 	} // end getLargest
 } // end Driver
