@@ -42,11 +42,10 @@ public class Driver {
 	        Field[] allFields = eachOne.getClass().getDeclaredFields();
 	        for (Field each : allFields) {
                 try {
-                	Field field = eachOne.getClass().getDeclaredField(each.getName());
-                    field.setAccessible(true);
-    	        	System.out.print(field.getName()+"=");
-                    field.setAccessible(true);
-                    System.out.print(field.get(eachOne)+"//");
+                    each.setAccessible(true);
+    	        	System.out.print(each.getName()+"=");
+    	        	each.setAccessible(true);
+                    System.out.print(each.get(eachOne)+"//");
                 } catch (Exception e) {
                 	e.printStackTrace();
                 } // end catch

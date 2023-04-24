@@ -43,15 +43,14 @@ public class Driver {
         int fieldCounter=1;
         for (Field each : allFields) {
             try {
-            	Field field = inc.getClass().getDeclaredField(each.getName());
-                field.setAccessible(true);
-                sb.append("\"").append(field.getName().toLowerCase()).append("\":");
-            	if (field.getType().toString().equals("class java.lang.String")) { // JSON strings need quotations
-                    sb.append("\"").append(field.get(inc)).append("\"");            		
-            	} else if (field.getType().toString().equals("int") // JSON numbers & booleans do not need quotations
-            			|| field.getType().toString().equals("double") 
-            			|| field.getType().toString().equals("boolean")) {
-                    sb.append(field.get(inc));     
+                each.setAccessible(true);
+                sb.append("\"").append(each.getName().toLowerCase()).append("\":");
+            	if (each.getType().toString().equals("class java.lang.String")) { // JSON strings need quotations
+                    sb.append("\"").append(each.get(inc)).append("\"");            		
+            	} else if (each.getType().toString().equals("int") // JSON numbers & booleans do not need quotations
+            			|| each.getType().toString().equals("double") 
+            			|| each.getType().toString().equals("boolean")) {
+                    sb.append(each.get(inc));     
             	} // end if
                 if (fieldCounter++ < allFields.length) { // add comma after each field except the last one
             		sb.append(",");
@@ -71,11 +70,10 @@ public class Driver {
 		Field[] allFields = inc.getClass().getDeclaredFields();
 		 for (Field each : allFields) {
 	            try {
-	            	Field field = inc.getClass().getDeclaredField(each.getName());
-	                field.setAccessible(true);
-	                sb.append("<").append(field.getName().toLowerCase()).append(">");
-	                sb.append(field.get(inc));
-	                sb.append("</").append(field.getName().toLowerCase()).append(">");
+	            	each.setAccessible(true);
+	                sb.append("<").append(each.getName().toLowerCase()).append(">");
+	                sb.append(each.get(inc));
+	                sb.append("</").append(each.getName().toLowerCase()).append(">");
 	            } catch (Exception e) {
 	            	e.printStackTrace();
 	            } // end catch
